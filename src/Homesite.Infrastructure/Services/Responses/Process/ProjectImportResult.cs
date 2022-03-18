@@ -17,7 +17,6 @@ namespace Homesite.Infrastructure.Services.Responses.Process
         public IList<string>? Roles { get; set; }
         public IList<string>? Languages { get; set; }
         public IList<string>? Databases { get; set; }
-        public IList<string>? DesignPatterns { get; set; }
         public IList<string>? Toolkits { get; set; }
         public IList<string>? Methodologies { get; set; }
     }

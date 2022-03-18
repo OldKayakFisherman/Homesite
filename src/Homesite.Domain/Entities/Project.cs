@@ -19,7 +19,6 @@ namespace Homesite.Domain.Entities
         public ICollection<ProjectRole>? Roles { get; set; }
         public ICollection<Language>? Languages { get; set; }
         public ICollection<Database>? Databases { get; set; }
-        public ICollection<DesignPattern>? DesignPatterns { get; set; }
         public ICollection<Toolkit>? Toolkits { get; set; }
         public ICollection<Methodology>? Methodologies { get; set; }
 
