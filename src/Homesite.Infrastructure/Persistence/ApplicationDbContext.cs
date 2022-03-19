@@ -26,7 +26,6 @@ namespace Homesite.Infrastructure.Persistence
 
         public DbSet<Client> Clients => Set<Client>();
         public DbSet<Database> Databases => Set<Database>();
-        public DbSet<DesignPattern> DesignPatterns => Set<DesignPattern>();
         public DbSet<Language> Languages => Set<Language>();
         public DbSet<Methodology> Methodologies => Set<Methodology>();
         public DbSet<Project> Project => Set<Project>();

@@ -15,7 +15,6 @@ namespace Homesite.Application.Common.Interfaces.Persistence
         DbSet<BannedIP> BannedIPs { get; }
         DbSet<Client> Clients { get; }
         DbSet<Database> Databases { get; }
-        DbSet<DesignPattern> DesignPatterns { get; }
         DbSet<Language> Languages { get; }
         DbSet<Methodology> Methodologies { get; }
         DbSet<Project> Project { get; }
