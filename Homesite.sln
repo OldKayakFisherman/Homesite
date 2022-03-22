@@ -22,6 +22,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{B978
 		..\..\..\Projects\DotNet\fishcatch\scripts\resetDatabaseMigrationState.ps1 = ..\..\..\Projects\DotNet\fishcatch\scripts\resetDatabaseMigrationState.ps1
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestUtilities", "tests\TestUtilities\TestUtilities.csproj", "{00EE9F31-277E-4F43-B34C-6E5CC8A73BED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,6 +50,10 @@ Global
 		{F33B42DB-2708-4DEA-BA20-1B7C22633DBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F33B42DB-2708-4DEA-BA20-1B7C22633DBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F33B42DB-2708-4DEA-BA20-1B7C22633DBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00EE9F31-277E-4F43-B34C-6E5CC8A73BED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00EE9F31-277E-4F43-B34C-6E5CC8A73BED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00EE9F31-277E-4F43-B34C-6E5CC8A73BED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00EE9F31-277E-4F43-B34C-6E5CC8A73BED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,6 +64,7 @@ Global
 		{8D704DA7-51D3-4A14-A77A-CEF0A701661A} = {7C83E5A3-549E-40BC-92F1-F307833231E2}
 		{AB27FFFC-F689-498D-BBDC-1CB662885F19} = {7C83E5A3-549E-40BC-92F1-F307833231E2}
 		{F33B42DB-2708-4DEA-BA20-1B7C22633DBE} = {98B430B1-D2F0-4B6D-AC60-C3C1497F31D6}
+		{00EE9F31-277E-4F43-B34C-6E5CC8A73BED} = {98B430B1-D2F0-4B6D-AC60-C3C1497F31D6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EEE96E37-E5BF-46BD-A267-F37CE9FF50B8}

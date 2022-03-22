@@ -18,7 +18,7 @@ namespace Homesite.Application.Common.Interfaces.Persistence
         DbSet<Language> Languages { get; }
         DbSet<Methodology> Methodologies { get; }
         DbSet<Project> Project { get; }
-        DbSet<ProjectRole> Roles { get; }
+        DbSet<ProjectRole> ProjectRoles { get; }
         DbSet<Toolkit> Toolkits { get; }
 
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);

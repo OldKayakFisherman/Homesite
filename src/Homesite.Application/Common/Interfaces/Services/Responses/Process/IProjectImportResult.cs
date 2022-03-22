@@ -4,11 +4,11 @@
     public interface IProjectImportRecord
     {
 
-        string Name { get; set; }
-        string Client { get; set; }
+        string? Name { get; set; }
+        string? Client { get; set; }
         short StartYear { get; set; }
         short? EndYear { get; set; }
-        string Description { get; set; }
+        string? Description { get; set; }
 
         IList<string>? Roles { get; set; }
         IList<string>? Languages { get; set; }
@@ -24,6 +24,6 @@
         TimeSpan Duration { get; set; }
         bool Success { get; set; }
 
-        IList<IProjectImportRecord> ProjectImports { get; set; }
+        IList<IProjectImportRecord>? ProjectImports { get; set; }
     }
 }

@@ -7,6 +7,7 @@
     <UserSecretsId>aspnet-Homesite.Web-EB4F7FD3-B368-485B-B2C7-EE022F3787A2</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>..\..</DockerfileContext>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
 
   <ItemGroup>

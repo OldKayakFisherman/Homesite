@@ -29,7 +29,7 @@ namespace Homesite.Infrastructure.Persistence
         public DbSet<Language> Languages => Set<Language>();
         public DbSet<Methodology> Methodologies => Set<Methodology>();
         public DbSet<Project> Project => Set<Project>();
-        public DbSet<ProjectRole> Roles => Set<ProjectRole>();
+        public DbSet<ProjectRole> ProjectRoles => Set<ProjectRole>();
         public DbSet<Toolkit> Toolkits => Set<Toolkit>();
     }
 }
