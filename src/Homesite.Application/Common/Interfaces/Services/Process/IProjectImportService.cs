@@ -9,6 +9,6 @@ namespace Homesite.Application.Common.Interfaces.Services.Process
 {
     public interface IProjectImportService
     {
-        IProjectImportResult ImportProjects(byte[] fileData);
+        IProjectImportResult ImportProjects(MemoryStream fileData);
     }
 }

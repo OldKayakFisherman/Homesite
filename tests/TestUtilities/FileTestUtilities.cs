@@ -10,7 +10,7 @@ namespace TestUtilities
 {
     public static class FileTestUtilities
     {
-        public static Stream ReadAssetFileAsStream(string filename, TestContext ctx)
+        public static MemoryStream ReadAssetFileAsStream(string filename, TestContext ctx)
         {
             return new MemoryStream(File.ReadAllBytes(Path.Combine(ctx.WorkDirectory, "Assets", filename)));
         }
