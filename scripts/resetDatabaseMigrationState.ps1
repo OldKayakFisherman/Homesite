@@ -11,8 +11,7 @@ Remove-Item $migrationsPath\* -Include *.cs
 
 #Remove the database
 Remove-Item $webPath\app.db
-Remove-Item $webPath\app.db-shm
-Remove-Item $webPath\app.db-wal
+
 
 
 dotnet ef database update --project $infrastructurePath --startup-project $webPath
