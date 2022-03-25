@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="EPPlus" Version="4.5.3.3" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.1" />
     <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="6.0.1" />
   </ItemGroup>
@@ -15,11 +16,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Homesite.Application\Homesite.Application.csproj" />
     <ProjectReference Include="..\Homesite.Domain\Homesite.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Services\Parameters\" />
-    <Folder Include="Services\Process\" />
   </ItemGroup>
 
 </Project>

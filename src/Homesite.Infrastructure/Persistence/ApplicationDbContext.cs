@@ -31,5 +31,6 @@ namespace Homesite.Infrastructure.Persistence
         public DbSet<Project> Project => Set<Project>();
         public DbSet<ProjectRole> ProjectRoles => Set<ProjectRole>();
         public DbSet<Toolkit> Toolkits => Set<Toolkit>();
+        public DbSet<RuntimeError> RuntimeErrors => Set<RuntimeError>();
     }
 }

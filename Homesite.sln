@@ -15,14 +15,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homesite.Infrastructure", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homesite.Web", "src\Homesite.Web\Homesite.Web.csproj", "{AB27FFFC-F689-498D-BBDC-1CB662885F19}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homesite.Infrastructure.Tests", "tests\Homesite.Infrastructure.Tests\Homesite.Infrastructure.Tests.csproj", "{F33B42DB-2708-4DEA-BA20-1B7C22633DBE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homesite.Infrastructure.Tests", "tests\Homesite.Infrastructure.Tests\Homesite.Infrastructure.Tests.csproj", "{F33B42DB-2708-4DEA-BA20-1B7C22633DBE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{B9786CC0-92D3-4B42-8603-CD47034F46B3}"
 	ProjectSection(SolutionItems) = preProject
-		..\..\..\Projects\DotNet\fishcatch\scripts\resetDatabaseMigrationState.ps1 = ..\..\..\Projects\DotNet\fishcatch\scripts\resetDatabaseMigrationState.ps1
+		scripts\resetDatabaseMigrationState.ps1 = scripts\resetDatabaseMigrationState.ps1
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestUtilities", "tests\TestUtilities\TestUtilities.csproj", "{00EE9F31-277E-4F43-B34C-6E5CC8A73BED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestUtilities", "tests\TestUtilities\TestUtilities.csproj", "{00EE9F31-277E-4F43-B34C-6E5CC8A73BED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

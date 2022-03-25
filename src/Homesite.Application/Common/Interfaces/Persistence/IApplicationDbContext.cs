@@ -20,6 +20,7 @@ namespace Homesite.Application.Common.Interfaces.Persistence
         DbSet<Project> Project { get; }
         DbSet<ProjectRole> ProjectRoles { get; }
         DbSet<Toolkit> Toolkits { get; }
+        DbSet<RuntimeError> RuntimeErrors { get; }
 
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
     }
