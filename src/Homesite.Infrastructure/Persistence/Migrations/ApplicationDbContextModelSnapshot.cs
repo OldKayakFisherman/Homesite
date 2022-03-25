@@ -341,15 +341,15 @@ namespace Homesite.Infrastructure.Persistence.Migrations
                         {
                             Id = "760bef19-4266-43e0-a6b0-37c46ea31316",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "96486815-b626-43b6-b625-7da991b861e5",
+                            ConcurrencyStamp = "3567455a-adfb-423b-a939-08df0948bd14",
                             Email = "rick.flagg@protonmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "rick.flagg@protonmail.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAEKiHyO9SjkdrKa9jhzVcowJ5Ul5L4Gt1RzBuk51QKe1CQa+PYGaJEkiqNjHBGngFuw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEIe08YflbnbrkIEm9vJx/eFnzgqIilXGA6Z42hIt0z96Qsc7wq7dw0V+5NbiUrhHDg==",
                             PhoneNumber = "1234567890",
                             PhoneNumberConfirmed = true,
-                            SecurityStamp = "341465b1-b14c-4eab-9919-cd9a3639a2bb",
+                            SecurityStamp = "ba1d5318-242d-41b4-8ea7-c6ea65050199",
                             TwoFactorEnabled = false,
                             UserName = "rick.flagg@protonmail.com"
                         });
@@ -509,11 +509,6 @@ namespace Homesite.Infrastructure.Persistence.Migrations
                         {
                             UserId = "760bef19-4266-43e0-a6b0-37c46ea31316",
                             RoleId = "6f276b20-5381-4320-a562-64b4bcca0f0f"
-                        },
-                        new
-                        {
-                            UserId = "9e409372-8b4c-4255-aacb-b834ed7d738d",
-                            RoleId = "f6ab5857-a7da-457b-a7d9-a4fdf618a6de"
                         });
                 });
 

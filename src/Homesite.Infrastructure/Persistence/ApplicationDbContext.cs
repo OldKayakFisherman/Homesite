@@ -52,11 +52,6 @@ namespace Homesite.Infrastructure.Persistence
                 new IdentityUserRole<string>() { RoleId = "6f276b20-5381-4320-a562-64b4bcca0f0f", UserId = "760bef19-4266-43e0-a6b0-37c46ea31316" }
                 );
 
-            builder.Entity<IdentityUserRole<string>>().HasData(
-                new IdentityUserRole<string>() { RoleId = "f6ab5857-a7da-457b-a7d9-a4fdf618a6de", UserId = "9e409372-8b4c-4255-aacb-b834ed7d738d" }
-                );
-
-
         }
 
         private void SeedRoles(ModelBuilder builder)

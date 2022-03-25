@@ -13,8 +13,6 @@ Remove-Item $migrationsPath\* -Include *.cs
 Remove-Item $webPath\app.db
 
 
-
-dotnet ef database update --project $infrastructurePath --startup-project $webPath
 dotnet ef migrations add "InitialMigration" --project $infrastructurePath --startup-project $webPath --output-dir $migrationsPath
-
+dotnet ef database update --project $infrastructurePath --startup-project $webPath
 
