@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Homesite.Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220325183112_InitialMigration")]
+    [Migration("20220325193146_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -343,17 +343,17 @@ namespace Homesite.Infrastructure.Persistence.Migrations
                         {
                             Id = "760bef19-4266-43e0-a6b0-37c46ea31316",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "830f21f3-b3ef-4825-a270-69303cd1fc3a",
-                            Email = "admin@fake.com",
+                            ConcurrencyStamp = "96486815-b626-43b6-b625-7da991b861e5",
+                            Email = "rick.flagg@protonmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
-                            NormalizedUserName = "ADMIN@FAKE.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEMZomtTMXQDX3GztnFLsfOxV8qj3u54oB8MgRc3M8Q3qJ2lNZhSsz294aK8N/YUQ9g==",
+                            NormalizedUserName = "rick.flagg@protonmail.com",
+                            PasswordHash = "AQAAAAEAACcQAAAAEKiHyO9SjkdrKa9jhzVcowJ5Ul5L4Gt1RzBuk51QKe1CQa+PYGaJEkiqNjHBGngFuw==",
                             PhoneNumber = "1234567890",
                             PhoneNumberConfirmed = true,
-                            SecurityStamp = "3bffc69f-77c8-4826-b2b2-342e40a169a8",
+                            SecurityStamp = "341465b1-b14c-4eab-9919-cd9a3639a2bb",
                             TwoFactorEnabled = false,
-                            UserName = "admin@fake.com"
+                            UserName = "rick.flagg@protonmail.com"
                         });
                 });
 
@@ -419,13 +419,6 @@ namespace Homesite.Infrastructure.Persistence.Migrations
                             ConcurrencyStamp = "1",
                             Name = "Admin",
                             NormalizedName = "Admin"
-                        },
-                        new
-                        {
-                            Id = "f6ab5857-a7da-457b-a7d9-a4fdf618a6de",
-                            ConcurrencyStamp = "2",
-                            Name = "Fisher",
-                            NormalizedName = "Fisher User"
                         });
                 });
 
