@@ -35,7 +35,7 @@ namespace TestUtilities
         {
             var options = CreateOptions<ApplicationDbContext>();
 
-            var ctx = new ApplicationDbContext((DbContextOptions<ApplicationDbContext>)options);
+            var ctx = new ApplicationDbContext((DbContextOptions<ApplicationDbContext>)options, ConfigurationTestUtilities.BuildTestConfiguration());
 
             ctx.Database.EnsureCreated();
 
