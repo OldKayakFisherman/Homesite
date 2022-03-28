@@ -23,7 +23,8 @@
     {
         TimeSpan Duration { get; set; }
         bool Success { get; set; }
-
+        Exception? Error { get; set; }
         IList<IProjectImportRecord>? ProjectImports { get; set; }
+        IList<string> Messages { get; set; }
     }
 }
