@@ -7,8 +7,8 @@ using Homesite.Application.Common.Interfaces.Services.Responses.Process;
 
 namespace Homesite.Application.Common.Interfaces.Services.Process
 {
-    public interface IProjectImportService
+    public interface IProjectParserService
     {
-        IProjectImportResult ImportProjects(IProjectParserResult projectParserResult);
+        IProjectParserResult ParseProjects(MemoryStream fileData);
     }
 }

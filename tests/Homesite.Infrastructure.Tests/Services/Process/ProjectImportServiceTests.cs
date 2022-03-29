@@ -15,22 +15,6 @@ namespace Homesite.Infrastructure.Tests.Services.Process
 { 
     public class ProjectImportServiceTests
     {
-        [Test]
-        public void TestImportValidProjects()
-        {
-            MemoryStream ms = FileTestUtilities.ReadAssetFileAsStream("ProjectImportTestAsset.xlsx", TestContext.CurrentContext);
-
-            Assert.IsNotNull(ms);
-
-            IProjectImportService projectImportService = new ProjectImportService();
-
-            IProjectImportResult result = projectImportService.ImportProjects(ms);
-
-            Assert.IsTrue(result.Success);
-            Assert.IsTrue(result.ProjectImports.Count == 3);
-
-
-            
-        }
+       
     }
 }
