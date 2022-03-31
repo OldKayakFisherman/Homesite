@@ -24,7 +24,6 @@ namespace Homesite.Application.Common.Interfaces.Services.Responses.Process
 
     public interface IProjectParserResult
     {
-        public TimeSpan Duration { get; set; }
         public bool Success { get; set; }
         public Exception? Error { get; set; }
         public IList<IProjectParseRecord>? ParsedProjects { get; set; }

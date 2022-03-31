@@ -15,7 +15,7 @@ namespace Homesite.Infrastructure.Tests.Services.Process
     public class ProjectParserServiceTests
     {
         [Test]
-        public void TestImportValidProjects()
+        public void TestParseValidProjects()
         {
             MemoryStream ms = FileTestUtilities.ReadAssetFileAsStream("ProjectImportTestAsset.xlsx", TestContext.CurrentContext);
 

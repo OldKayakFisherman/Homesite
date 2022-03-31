@@ -5,8 +5,10 @@ using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 
 namespace TestUtilities
 {
@@ -22,6 +24,9 @@ namespace TestUtilities
                 .AddInMemoryCollection(inMemorySettings)
                 .Build();
 
+            configuration["site.admin.email"] = "some.email@test.com";
+            configuration["site.admin.password"] = "supersecretpassword1239@!";
+
             return configuration;
         }
 
@@ -33,6 +38,15 @@ namespace TestUtilities
 
             return hostMock.Object;
 
+        }
+
+        public static IMapper BuildMapper(Assembly mapperAssembly)
+        {
+            var config = new MapperConfiguration(cfg => {
+                cfg.AddMaps(mapperAssembly);
+            });
+
+            return new Mapper(config);
         }
     }
 }

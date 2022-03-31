@@ -5,11 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using Homesite.Application.Common.Interfaces.Services.Parameters.Process;
 using Homesite.Application.Common.Interfaces.Services.Responses.Process;
+using Homesite.Infrastructure.Services.Responses.Process;
 
-namespace Homesite.Application.Common.Interfaces.Services.Process
+namespace Homesite.Infrastructure.Services.Parameters.Process
 {
-    public interface IProjectImportService
+    public class ProjectImportParameters: IProjectImportParameters
     {
-        IProjectImportResult ImportProjects(IProjectImportParameters prms);
+        public IList<IProjectParseRecord> ParsedRecords { get; set; }
     }
 }
