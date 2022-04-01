@@ -4,8 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
+using Homesite.Application.Common.Interfaces.Services.Responses.Process;
 using Homesite.Domain.Entities;
 using Homesite.Infrastructure.Services.Parameters.Logging;
+using Homesite.Infrastructure.Services.Responses.Process;
 
 namespace Homesite.Infrastructure.Mapping
 {
@@ -14,6 +16,8 @@ namespace Homesite.Infrastructure.Mapping
         public MappingProfile()
         {
             CreateMap<RuntimeErrorParameter, RuntimeError>();
+            CreateMap<ProjectParseRecord, Project>();
+            CreateMap<Project, ProjectParseRecord>();
         }
     }
 }

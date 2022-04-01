@@ -26,11 +26,17 @@ namespace Homesite.Infrastructure.Tests.Services.Process
         [Test]
         public void TestProjectImport()
         {
-            Assembly targetAssembly = Assembly.GetAssembly(typeof(MappingProfile));
 
-            Assert.IsNotNull(targetAssembly);
 
-            IMapper mapper = ConfigurationTestUtilities.BuildMapper(targetAssembly);
+            //IMapper mapper = ConfigurationTestUtilities.BuildMapper(typeof(MappingProfile));
+
+            var mappingConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new MappingProfile());
+            });
+            IMapper mapper = mappingConfig.CreateMapper();
+
+
 
             Assert.IsNotNull(mapper);
 

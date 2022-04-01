@@ -9,6 +9,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
+using Homesite.Infrastructure.Mapping;
 
 namespace TestUtilities
 {
@@ -40,13 +41,17 @@ namespace TestUtilities
 
         }
 
-        public static IMapper BuildMapper(Assembly mapperAssembly)
+        public static IMapper BuildMapper(Type profileClass)
         {
+            
             var config = new MapperConfiguration(cfg => {
-                cfg.AddMaps(mapperAssembly);
+                cfg.AddProfile(profileClass);
             });
 
             return new Mapper(config);
+            
+
+            
         }
     }
 }

@@ -22,6 +22,7 @@ namespace Homesite.Infrastructure.Services.Process
         public ProjectImportService(IApplicationDbContext ctx, IMapper mapper)
         {
             _ctx = ctx;
+            _mapper = mapper;
         }
 
         public IProjectImportResult ImportProjects(IProjectImportParameters projectParserResult)
@@ -29,9 +30,9 @@ namespace Homesite.Infrastructure.Services.Process
             ProjectImportResult projectImportResult = new ProjectImportResult();
 
             
-            foreach (IProjectParseRecord record in projectParserResult.ParsedRecords)
+            foreach (ProjectParseRecord record in projectParserResult.ParsedRecords)
             {
-                Project entity = _mapper.Map<Project>(record);
+                var entity = _mapper.Map<Project>(record);
 
             }
 
