@@ -10,8 +10,6 @@ using Homesite.Application.Common.Interfaces.Persistence;
 using Homesite.Application.Common.Interfaces.Services.Parameters.Process;
 using Homesite.Application.Common.Interfaces.Services.Process;
 using Homesite.Application.Common.Interfaces.Services.Responses.Process;
-using Homesite.Domain.Entities;
-using Homesite.Infrastructure.Mapping;
 using Homesite.Infrastructure.Services.Parameters.Process;
 using Homesite.Infrastructure.Services.Process;
 using Homesite.Infrastructure.Services.Responses.Process;
@@ -27,31 +25,21 @@ namespace Homesite.Infrastructure.Tests.Services.Process
         public void TestProjectImport()
         {
 
-
-            //IMapper mapper = ConfigurationTestUtilities.BuildMapper(typeof(MappingProfile));
-
-            var mappingConfig = new MapperConfiguration(mc =>
-            {
-                mc.AddProfile(new MappingProfile());
-            });
-            IMapper mapper = mappingConfig.CreateMapper();
-
-
-
-            Assert.IsNotNull(mapper);
-
             IApplicationDbContext ctx = DBTestUtilities.CreateDbContext();
 
-            IProjectImportService importService = new ProjectImportService(ctx, mapper);
+            IProjectImportService importService = new ProjectImportService(ctx);
 
             IProjectParserResult parserResult = new ProjectParserResult();
 
             IProjectImportParameters prms = new ProjectImportParameters();
             prms.ParsedRecords = new DataTestUtilities().CreateTestProjectParseRecords(600);
             
+            IProjectImportResult importResult =  importService.ImportProjects(prms);
 
-            importService.ImportProjects(prms);
-
+            Assert.IsNotNull(importResult);
+            Assert.IsTrue(importResult.ProjectImportCount > 0);
+            Assert.IsTrue(importResult.Success);
+            Assert.IsTrue(ctx.Projects.Any());
 
         }
     }

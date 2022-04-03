@@ -314,7 +314,7 @@ namespace Homesite.Infrastructure.Persistence.Migrations
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Summary = table.Column<string>(type: "TEXT", nullable: true),
+                    Description = table.Column<string>(type: "TEXT", nullable: true),
                     Name = table.Column<string>(type: "TEXT", nullable: true),
                     StartYear = table.Column<short>(type: "INTEGER", nullable: false),
                     EndYear = table.Column<short>(type: "INTEGER", nullable: true),
@@ -458,7 +458,7 @@ namespace Homesite.Infrastructure.Persistence.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "760bef19-4266-43e0-a6b0-37c46ea31316", 0, "3567455a-adfb-423b-a939-08df0948bd14", "rick.flagg@protonmail.com", true, false, null, null, "rick.flagg@protonmail.com", "AQAAAAEAACcQAAAAEIe08YflbnbrkIEm9vJx/eFnzgqIilXGA6Z42hIt0z96Qsc7wq7dw0V+5NbiUrhHDg==", "1234567890", true, "ba1d5318-242d-41b4-8ea7-c6ea65050199", false, "rick.flagg@protonmail.com" });
+                values: new object[] { "760bef19-4266-43e0-a6b0-37c46ea31316", 0, "3c4ad0b8-2817-42cf-8cb5-9ea9663f8e45", "rick.flagg@protonmail.com", true, false, null, null, "rick.flagg@protonmail.com", "AQAAAAEAACcQAAAAEL4wDaFAGGwJ+k//1Oha+3D2s8gsWMILfhMqorrv8spCg3iIJDxxqRUy+trYP4oLNg==", "1234567890", true, "592171ac-594f-4a7c-9832-e0083cd3338a", false, "rick.flagg@protonmail.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",

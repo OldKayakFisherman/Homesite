@@ -15,9 +15,7 @@ namespace Homesite.Infrastructure.Mapping
     {
         public MappingProfile()
         {
-            CreateMap<RuntimeErrorParameter, RuntimeError>();
-            CreateMap<ProjectParseRecord, Project>();
-            CreateMap<Project, ProjectParseRecord>();
+            
         }
     }
 }

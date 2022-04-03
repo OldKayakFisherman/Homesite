@@ -17,7 +17,7 @@ namespace Homesite.Application.Common.Interfaces.Persistence
         DbSet<Database> Databases { get; }
         DbSet<Language> Languages { get; }
         DbSet<Methodology> Methodologies { get; }
-        DbSet<Project> Project { get; }
+        DbSet<Project> Projects { get; }
         DbSet<ProjectRole> ProjectRoles { get; }
         DbSet<Toolkit> Toolkits { get; }
         DbSet<RuntimeError> RuntimeErrors { get; }

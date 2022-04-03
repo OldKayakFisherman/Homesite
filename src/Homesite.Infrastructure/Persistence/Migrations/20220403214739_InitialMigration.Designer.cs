@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Homesite.Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220325194206_InitialMigration")]
+    [Migration("20220403214739_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -139,6 +139,9 @@ namespace Homesite.Infrastructure.Persistence.Migrations
                     b.Property<int?>("ClientId")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("Description")
+                        .HasColumnType("TEXT");
+
                     b.Property<short?>("EndYear")
                         .HasColumnType("INTEGER");
 
@@ -147,9 +150,6 @@ namespace Homesite.Infrastructure.Persistence.Migrations
 
                     b.Property<short>("StartYear")
                         .HasColumnType("INTEGER");
-
-                    b.Property<string>("Summary")
-                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
@@ -343,15 +343,15 @@ namespace Homesite.Infrastructure.Persistence.Migrations
                         {
                             Id = "760bef19-4266-43e0-a6b0-37c46ea31316",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "3567455a-adfb-423b-a939-08df0948bd14",
+                            ConcurrencyStamp = "3c4ad0b8-2817-42cf-8cb5-9ea9663f8e45",
                             Email = "rick.flagg@protonmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "rick.flagg@protonmail.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAEIe08YflbnbrkIEm9vJx/eFnzgqIilXGA6Z42hIt0z96Qsc7wq7dw0V+5NbiUrhHDg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEL4wDaFAGGwJ+k//1Oha+3D2s8gsWMILfhMqorrv8spCg3iIJDxxqRUy+trYP4oLNg==",
                             PhoneNumber = "1234567890",
                             PhoneNumberConfirmed = true,
-                            SecurityStamp = "ba1d5318-242d-41b4-8ea7-c6ea65050199",
+                            SecurityStamp = "592171ac-594f-4a7c-9832-e0083cd3338a",
                             TwoFactorEnabled = false,
                             UserName = "rick.flagg@protonmail.com"
                         });
