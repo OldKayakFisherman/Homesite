@@ -22,7 +22,7 @@ namespace Homesite.Infrastructure.Tests.Services.Process
     public class ProjectImportServiceTests
     {
         [Test]
-        public void TestProjectImport()
+        public async Task TestProjectImport()
         {
 
             IApplicationDbContext ctx = DBTestUtilities.CreateDbContext();
@@ -34,7 +34,7 @@ namespace Homesite.Infrastructure.Tests.Services.Process
             IProjectImportParameters prms = new ProjectImportParameters();
             prms.ParsedRecords = new DataTestUtilities().CreateTestProjectParseRecords(600);
             
-            IProjectImportResult importResult =  importService.ImportProjects(prms);
+            IProjectImportResult importResult = await importService.ImportProjects(prms);
 
             Assert.IsNotNull(importResult);
             Assert.IsTrue(importResult.ProjectImportCount > 0);

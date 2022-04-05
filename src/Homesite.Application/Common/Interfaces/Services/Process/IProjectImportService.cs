@@ -10,6 +10,6 @@ namespace Homesite.Application.Common.Interfaces.Services.Process
 {
     public interface IProjectImportService
     {
-        IProjectImportResult ImportProjects(IProjectImportParameters prms);
+        Task<IProjectImportResult> ImportProjects(IProjectImportParameters prms);
     }
 }
