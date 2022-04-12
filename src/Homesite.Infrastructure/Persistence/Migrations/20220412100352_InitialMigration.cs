@@ -183,7 +183,6 @@ namespace Homesite.Infrastructure.Persistence.Migrations
                     LocalIP = table.Column<string>(type: "TEXT", nullable: true),
                     RemoteIP = table.Column<string>(type: "TEXT", nullable: true),
                     RequestCookies = table.Column<string>(type: "TEXT", nullable: true),
-                    RequestFormValues = table.Column<string>(type: "TEXT", nullable: true),
                     RequestHeaders = table.Column<string>(type: "TEXT", nullable: true),
                     Host = table.Column<string>(type: "TEXT", nullable: true),
                     RequestMethod = table.Column<string>(type: "TEXT", nullable: true),
@@ -309,7 +308,7 @@ namespace Homesite.Infrastructure.Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Project",
+                name: "Projects",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
@@ -322,9 +321,9 @@ namespace Homesite.Infrastructure.Persistence.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Project", x => x.Id);
+                    table.PrimaryKey("PK_Projects", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Project_Clients_ClientId",
+                        name: "FK_Projects_Clients_ClientId",
                         column: x => x.ClientId,
                         principalTable: "Clients",
                         principalColumn: "Id");
@@ -347,9 +346,9 @@ namespace Homesite.Infrastructure.Persistence.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_DatabaseProject_Project_ProjectsId",
+                        name: "FK_DatabaseProject_Projects_ProjectsId",
                         column: x => x.ProjectsId,
-                        principalTable: "Project",
+                        principalTable: "Projects",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -371,9 +370,9 @@ namespace Homesite.Infrastructure.Persistence.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_LanguageProject_Project_ProjectsId",
+                        name: "FK_LanguageProject_Projects_ProjectsId",
                         column: x => x.ProjectsId,
-                        principalTable: "Project",
+                        principalTable: "Projects",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -395,9 +394,9 @@ namespace Homesite.Infrastructure.Persistence.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_MethodologyProject_Project_ProjectsId",
+                        name: "FK_MethodologyProject_Projects_ProjectsId",
                         column: x => x.ProjectsId,
-                        principalTable: "Project",
+                        principalTable: "Projects",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -413,15 +412,15 @@ namespace Homesite.Infrastructure.Persistence.Migrations
                 {
                     table.PrimaryKey("PK_ProjectProjectRole", x => new { x.ProjectsId, x.RolesId });
                     table.ForeignKey(
-                        name: "FK_ProjectProjectRole_Project_ProjectsId",
-                        column: x => x.ProjectsId,
-                        principalTable: "Project",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
                         name: "FK_ProjectProjectRole_ProjectRoles_RolesId",
                         column: x => x.RolesId,
                         principalTable: "ProjectRoles",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ProjectProjectRole_Projects_ProjectsId",
+                        column: x => x.ProjectsId,
+                        principalTable: "Projects",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -437,9 +436,9 @@ namespace Homesite.Infrastructure.Persistence.Migrations
                 {
                     table.PrimaryKey("PK_ProjectToolkit", x => new { x.ProjectsId, x.ToolkitsId });
                     table.ForeignKey(
-                        name: "FK_ProjectToolkit_Project_ProjectsId",
+                        name: "FK_ProjectToolkit_Projects_ProjectsId",
                         column: x => x.ProjectsId,
-                        principalTable: "Project",
+                        principalTable: "Projects",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
@@ -458,7 +457,7 @@ namespace Homesite.Infrastructure.Persistence.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "760bef19-4266-43e0-a6b0-37c46ea31316", 0, "3c4ad0b8-2817-42cf-8cb5-9ea9663f8e45", "rick.flagg@protonmail.com", true, false, null, null, "rick.flagg@protonmail.com", "AQAAAAEAACcQAAAAEL4wDaFAGGwJ+k//1Oha+3D2s8gsWMILfhMqorrv8spCg3iIJDxxqRUy+trYP4oLNg==", "1234567890", true, "592171ac-594f-4a7c-9832-e0083cd3338a", false, "rick.flagg@protonmail.com" });
+                values: new object[] { "760bef19-4266-43e0-a6b0-37c46ea31316", 0, "0cb20340-9ed0-4c48-9148-b0690ca03b64", "rick.flagg@protonmail.com", true, false, null, null, "rick.flagg@protonmail.com", "AQAAAAEAACcQAAAAEDV2cqCEezKx9RnAZmovYFERly+RDIhs7NnBY2oZXlfCVAHLfvDupxFGeKkM4CrFjQ==", "1234567890", true, "73569499-6e47-493b-b0bd-028f91b454b5", false, "rick.flagg@protonmail.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
@@ -518,14 +517,14 @@ namespace Homesite.Infrastructure.Persistence.Migrations
                 column: "ProjectsId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Project_ClientId",
-                table: "Project",
-                column: "ClientId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_ProjectProjectRole_RolesId",
                 table: "ProjectProjectRole",
                 column: "RolesId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Projects_ClientId",
+                table: "Projects",
+                column: "ClientId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ProjectToolkit_ToolkitsId",
@@ -596,7 +595,7 @@ namespace Homesite.Infrastructure.Persistence.Migrations
                 name: "ProjectRoles");
 
             migrationBuilder.DropTable(
-                name: "Project");
+                name: "Projects");
 
             migrationBuilder.DropTable(
                 name: "Toolkits");

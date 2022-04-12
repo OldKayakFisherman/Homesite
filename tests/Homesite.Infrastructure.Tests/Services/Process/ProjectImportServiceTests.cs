@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using Homesite.Application.Common.Interfaces.Persistence;
@@ -32,9 +33,9 @@ namespace Homesite.Infrastructure.Tests.Services.Process
             IProjectParserResult parserResult = new ProjectParserResult();
 
             IProjectImportParameters prms = new ProjectImportParameters();
-            prms.ParsedRecords = new DataTestUtilities().CreateTestProjectParseRecords(600);
+            prms.ParsedRecords = DataTestUtilities.CreateTestProjectParseRecords(600);
             
-            IProjectImportResult importResult = await importService.ImportProjects(prms);
+            IProjectImportResult importResult = await importService.ImportProjects(prms, CancellationToken.None);
 
             Assert.IsNotNull(importResult);
             Assert.IsTrue(importResult.ProjectImportCount > 0);

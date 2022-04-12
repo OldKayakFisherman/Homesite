@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Homesite.Application.Common.Interfaces.Services.Parameters.Logging;
 
 namespace Homesite.Application.Common.Interfaces.Services.Logging
 {
-    internal interface ITrafficLoggerService
+    public interface ITrafficLoggerService
     {
+        Task LogTraffic(ITrafficLogParameter parameter, CancellationToken token);
     }
 }

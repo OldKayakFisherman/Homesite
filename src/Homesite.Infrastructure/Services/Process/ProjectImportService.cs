@@ -24,7 +24,7 @@ namespace Homesite.Infrastructure.Services.Process
             _ctx = ctx;
         }
 
-        public async Task<IProjectImportResult> ImportProjects(IProjectImportParameters projectParserResult)
+        public async Task<IProjectImportResult> ImportProjects(IProjectImportParameters projectParserResult, CancellationToken token)
         {
             ProjectImportResult projectImportResult = new ProjectImportResult();
 
@@ -67,8 +67,8 @@ namespace Homesite.Infrastructure.Services.Process
                     }
 
 
-                    await _ctx.Projects.AddAsync(project);
-                    await _ctx.SaveChangesAsync(CancellationToken.None);
+                    await _ctx.Projects.AddAsync(project, token);
+                    await _ctx.SaveChangesAsync(token);
                     
                     projectImportResult.ProjectImportCount++;
 

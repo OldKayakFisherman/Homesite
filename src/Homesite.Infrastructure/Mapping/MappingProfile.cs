@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
+using Homesite.Application.Common.Interfaces.Services.Parameters.Logging;
 using Homesite.Application.Common.Interfaces.Services.Responses.Process;
 using Homesite.Domain.Entities;
 using Homesite.Infrastructure.Services.Parameters.Logging;
@@ -15,7 +16,7 @@ namespace Homesite.Infrastructure.Mapping
     {
         public MappingProfile()
         {
-            
+            CreateMap<ITrafficLogParameter, TrafficLog>();
         }
     }
 }

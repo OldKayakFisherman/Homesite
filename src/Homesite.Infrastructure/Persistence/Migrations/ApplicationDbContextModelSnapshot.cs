@@ -153,7 +153,7 @@ namespace Homesite.Infrastructure.Persistence.Migrations
 
                     b.HasIndex("ClientId");
 
-                    b.ToTable("Project");
+                    b.ToTable("Projects");
                 });
 
             modelBuilder.Entity("Homesite.Domain.Entities.ProjectRole", b =>
@@ -233,9 +233,6 @@ namespace Homesite.Infrastructure.Persistence.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("RequestCookies")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("RequestFormValues")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("RequestHeaders")
@@ -341,15 +338,15 @@ namespace Homesite.Infrastructure.Persistence.Migrations
                         {
                             Id = "760bef19-4266-43e0-a6b0-37c46ea31316",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "3c4ad0b8-2817-42cf-8cb5-9ea9663f8e45",
+                            ConcurrencyStamp = "0cb20340-9ed0-4c48-9148-b0690ca03b64",
                             Email = "rick.flagg@protonmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "rick.flagg@protonmail.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAEL4wDaFAGGwJ+k//1Oha+3D2s8gsWMILfhMqorrv8spCg3iIJDxxqRUy+trYP4oLNg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEDV2cqCEezKx9RnAZmovYFERly+RDIhs7NnBY2oZXlfCVAHLfvDupxFGeKkM4CrFjQ==",
                             PhoneNumber = "1234567890",
                             PhoneNumberConfirmed = true,
-                            SecurityStamp = "592171ac-594f-4a7c-9832-e0083cd3338a",
+                            SecurityStamp = "73569499-6e47-493b-b0bd-028f91b454b5",
                             TwoFactorEnabled = false,
                             UserName = "rick.flagg@protonmail.com"
                         });

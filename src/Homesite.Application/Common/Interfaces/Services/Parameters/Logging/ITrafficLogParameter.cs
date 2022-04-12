@@ -18,8 +18,6 @@ namespace Homesite.Application.Common.Interfaces.Services.Parameters.Logging
 
         string? RequestCookies { get; set; }
 
-        string? RequestFormValues { get; set; }
-
         string? RequestHeaders { get; set; }
 
         string? Host { get; set; }
