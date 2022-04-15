@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Homesite.Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220412100352_InitialMigration")]
+    [Migration("20220415202313_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -258,9 +258,6 @@ namespace Homesite.Infrastructure.Persistence.Migrations
                     b.Property<string>("RequestQueryString")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("RequestRouteValues")
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("RequestScheme")
                         .HasColumnType("TEXT");
 
@@ -340,15 +337,15 @@ namespace Homesite.Infrastructure.Persistence.Migrations
                         {
                             Id = "760bef19-4266-43e0-a6b0-37c46ea31316",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "0cb20340-9ed0-4c48-9148-b0690ca03b64",
+                            ConcurrencyStamp = "1b428d8b-f093-4db7-a5f7-43792475c9e0",
                             Email = "rick.flagg@protonmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "rick.flagg@protonmail.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAEDV2cqCEezKx9RnAZmovYFERly+RDIhs7NnBY2oZXlfCVAHLfvDupxFGeKkM4CrFjQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEBSJQpmrvNfb36kLgLaixLjb4OZRFqGaO7oV0Ubd2bqWDvS9ISk/79WTDSKTlZgnVw==",
                             PhoneNumber = "1234567890",
                             PhoneNumberConfirmed = true,
-                            SecurityStamp = "73569499-6e47-493b-b0bd-028f91b454b5",
+                            SecurityStamp = "ab23a84b-6815-448d-ae36-ef0fd89e882e",
                             TwoFactorEnabled = false,
                             UserName = "rick.flagg@protonmail.com"
                         });

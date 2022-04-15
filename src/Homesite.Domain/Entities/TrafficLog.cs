@@ -42,8 +42,6 @@ namespace Homesite.Domain.Entities
 
         public string? RequestQueryString { get; set; }
 
-        public string? RequestRouteValues { get; set; }
-
         public DateTime TrafficDate { get; set; } = DateTime.Now;
     }
 }

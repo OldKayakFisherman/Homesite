@@ -2,13 +2,20 @@ using Homesite.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using AutoMapper;
+using Homesite.Application.Common.Interfaces.Persistence;
+using Homesite.Application.Common.Interfaces.Services.Logging;
+using Homesite.Application.Common.Interfaces.Services.Parameters.Logging;
+using Homesite.Application.Common.Interfaces.Services.Process;
+using Homesite.Infrastructure.Middleware;
+using Homesite.Infrastructure.Services.Logging;
+using Homesite.Infrastructure.Services.Process;
 
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
+builder.Services.AddDbContext<IApplicationDbContext,ApplicationDbContext>(options =>
     options.UseSqlite(connectionString)
 );
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
@@ -19,6 +26,10 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
+// Custom services 
+builder.Services.AddTransient<IProjectParserService, ProjectParserService>();
+builder.Services.AddTransient<IProjectImportService, ProjectImportService>();
+builder.Services.AddTransient<ITrafficLoggerService, TrafficLoggerService>();
 
 var app = builder.Build();
 
@@ -35,7 +46,7 @@ else
 }
 
 
-
+app.UseTrafficLoggerMiddleware();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 

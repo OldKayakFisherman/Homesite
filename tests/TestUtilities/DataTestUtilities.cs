@@ -6,7 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Bogus;
 using Homesite.Application.Common.Interfaces.Services.Responses.Process;
-using Bogus;
 using Homesite.Application.Common.Interfaces.Services.Parameters.Logging;
 using Homesite.Infrastructure.Services.Parameters.Logging;
 using Homesite.Infrastructure.Services.Responses.Process;

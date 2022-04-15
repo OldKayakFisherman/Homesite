@@ -193,7 +193,6 @@ namespace Homesite.Infrastructure.Persistence.Migrations
                     RequestLength = table.Column<long>(type: "INTEGER", nullable: true),
                     RequestContentType = table.Column<string>(type: "TEXT", nullable: true),
                     RequestQueryString = table.Column<string>(type: "TEXT", nullable: true),
-                    RequestRouteValues = table.Column<string>(type: "TEXT", nullable: true),
                     TrafficDate = table.Column<DateTime>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
@@ -457,7 +456,7 @@ namespace Homesite.Infrastructure.Persistence.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "760bef19-4266-43e0-a6b0-37c46ea31316", 0, "0cb20340-9ed0-4c48-9148-b0690ca03b64", "rick.flagg@protonmail.com", true, false, null, null, "rick.flagg@protonmail.com", "AQAAAAEAACcQAAAAEDV2cqCEezKx9RnAZmovYFERly+RDIhs7NnBY2oZXlfCVAHLfvDupxFGeKkM4CrFjQ==", "1234567890", true, "73569499-6e47-493b-b0bd-028f91b454b5", false, "rick.flagg@protonmail.com" });
+                values: new object[] { "760bef19-4266-43e0-a6b0-37c46ea31316", 0, "1b428d8b-f093-4db7-a5f7-43792475c9e0", "rick.flagg@protonmail.com", true, false, null, null, "rick.flagg@protonmail.com", "AQAAAAEAACcQAAAAEBSJQpmrvNfb36kLgLaixLjb4OZRFqGaO7oV0Ubd2bqWDvS9ISk/79WTDSKTlZgnVw==", "1234567890", true, "ab23a84b-6815-448d-ae36-ef0fd89e882e", false, "rick.flagg@protonmail.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
