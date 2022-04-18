@@ -6,6 +6,7 @@ using Homesite.Application.Common.Interfaces.Persistence;
 using Homesite.Application.Common.Interfaces.Services.Logging;
 using Homesite.Application.Common.Interfaces.Services.Parameters.Logging;
 using Homesite.Application.Common.Interfaces.Services.Process;
+using Homesite.Infrastructure.Identity;
 using Homesite.Infrastructure.Middleware;
 using Homesite.Infrastructure.Services.Logging;
 using Homesite.Infrastructure.Services.Process;
@@ -13,15 +14,22 @@ using Homesite.Infrastructure.Services.Process;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlite(connectionString));;
+
+builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = false)
+    .AddEntityFrameworkStores<ApplicationDbContext>();;
+
+// Add services to the container.
+
 builder.Services.AddDbContext<IApplicationDbContext,ApplicationDbContext>(options =>
     options.UseSqlite(connectionString)
 );
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<ApplicationDbContext>();
+
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());

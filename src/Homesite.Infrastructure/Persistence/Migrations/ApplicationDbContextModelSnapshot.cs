@@ -15,7 +15,7 @@ namespace Homesite.Infrastructure.Persistence.Migrations
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "6.0.3");
+            modelBuilder.HasAnnotation("ProductVersion", "6.0.4");
 
             modelBuilder.Entity("DatabaseProject", b =>
                 {
@@ -335,15 +335,15 @@ namespace Homesite.Infrastructure.Persistence.Migrations
                         {
                             Id = "760bef19-4266-43e0-a6b0-37c46ea31316",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "1b428d8b-f093-4db7-a5f7-43792475c9e0",
+                            ConcurrencyStamp = "db52abfb-9945-445a-b15a-f8972bc8b2d4",
                             Email = "rick.flagg@protonmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
-                            NormalizedUserName = "rick.flagg@protonmail.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAEBSJQpmrvNfb36kLgLaixLjb4OZRFqGaO7oV0Ubd2bqWDvS9ISk/79WTDSKTlZgnVw==",
+                            NormalizedUserName = "RICK.FLAGG@PROTONMAIL.COM",
+                            PasswordHash = "AQAAAAEAACcQAAAAEOVU/9qK7kyta7GuPChH4dfol1wR+wdNXnWlIvGmZy07y92MzS7a58IiH4AySmB/2w==",
                             PhoneNumber = "1234567890",
                             PhoneNumberConfirmed = true,
-                            SecurityStamp = "ab23a84b-6815-448d-ae36-ef0fd89e882e",
+                            SecurityStamp = "45d75a39-9865-4959-97a8-db0dfe137fe7",
                             TwoFactorEnabled = false,
                             UserName = "rick.flagg@protonmail.com"
                         });

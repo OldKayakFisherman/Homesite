@@ -64,25 +64,25 @@ namespace Homesite.Infrastructure.Persistence
         private void SeedUsers(ModelBuilder builder)
         {
 
-           
-
             PasswordHasher<ApplicationUser> passwordHasher = new PasswordHasher<ApplicationUser>();
 
+            string username = _configuration["site.admin.email"].Trim();
+            string password = _configuration["site.admin.password"].Trim();
+
+            
             ApplicationUser adminUser = new ApplicationUser()
             {
                 Id = "760bef19-4266-43e0-a6b0-37c46ea31316",
-                UserName = _configuration["site.admin.email"],
-                Email = _configuration["site.admin.email"],
+                UserName = username,
+                Email = username,
                 LockoutEnabled = false,
                 PhoneNumber = "1234567890",
                 EmailConfirmed = true,
                 PhoneNumberConfirmed = true,
-                NormalizedUserName = _configuration["site.admin.email"]
-
+                NormalizedUserName = username.ToUpper()
             };
 
-
-            adminUser.PasswordHash = passwordHasher.HashPassword(adminUser, _configuration["site.admin.password"]);
+            adminUser.PasswordHash = passwordHasher.HashPassword(adminUser, password);
 
             builder.Entity<ApplicationUser>().HasData(adminUser);
 

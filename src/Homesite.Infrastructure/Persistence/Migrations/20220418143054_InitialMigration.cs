@@ -456,7 +456,7 @@ namespace Homesite.Infrastructure.Persistence.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "760bef19-4266-43e0-a6b0-37c46ea31316", 0, "1b428d8b-f093-4db7-a5f7-43792475c9e0", "rick.flagg@protonmail.com", true, false, null, null, "rick.flagg@protonmail.com", "AQAAAAEAACcQAAAAEBSJQpmrvNfb36kLgLaixLjb4OZRFqGaO7oV0Ubd2bqWDvS9ISk/79WTDSKTlZgnVw==", "1234567890", true, "ab23a84b-6815-448d-ae36-ef0fd89e882e", false, "rick.flagg@protonmail.com" });
+                values: new object[] { "760bef19-4266-43e0-a6b0-37c46ea31316", 0, "db52abfb-9945-445a-b15a-f8972bc8b2d4", "rick.flagg@protonmail.com", true, false, null, null, "RICK.FLAGG@PROTONMAIL.COM", "AQAAAAEAACcQAAAAEOVU/9qK7kyta7GuPChH4dfol1wR+wdNXnWlIvGmZy07y92MzS7a58IiH4AySmB/2w==", "1234567890", true, "45d75a39-9865-4959-97a8-db0dfe137fe7", false, "rick.flagg@protonmail.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",

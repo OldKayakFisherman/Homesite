@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rick Flagg</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/site.css">
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Rick Flagg</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link active" nav-name="index" asp-controller="Manage"  asp-action="Index">Dashboard</a>
+                <a class="nav-link" nav-name="project" asp-controller="Manage" asp-action="Projects">Projects</a>
+                <a class="nav-link" nav-name="skills" asp-controller="Manage" asp-action="Traffic">Traffic</a>
+                <a class="nav-link" nav-name="clients" asp-controller="Manage" asp-action="SiteErrors">Site Errors</a>
+                <a class="nav-link" nav-name="projects" asp-controller="Manage" asp-action="Banned'" >Banned IP's</a>
+                <a class="nav-link" nav-name="contact" asp-controller="Manage" asp-action="Logout" >Logout</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid" >
+    <main>
+        @RenderBody()
+    </main>
+</div>
+
+<footer class="footer mt-auto bg-black fixed-bottom">
+    <div class="container clearfix">
+        <span class="text-muted float-end">Copyright @Html.Raw(DateTime.Now.Year.ToString()) | All Rights Reserved</span>
+    </div>
+</footer>
+
+<script src="/lib/bootstrap/js/bootstrap.bundle.js"></script>
+<script src="/js/menuResolver.js"></script>
+
+@await RenderSectionAsync("Scripts", false)
+
+</body>
