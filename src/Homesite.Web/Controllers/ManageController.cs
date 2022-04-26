@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Homesite.Web.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Homesite.Web.Controllers
@@ -14,7 +15,7 @@ namespace Homesite.Web.Controllers
         [Authorize]
         public IActionResult Projects()
         {
-            return View();
+            return View(new ProjectUploadViewModel());
         }
 
         [Authorize]

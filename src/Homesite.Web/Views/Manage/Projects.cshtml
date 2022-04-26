@@ -1,5 +1,57 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@using System.Data
+@model ProjectUploadViewModel
+
+<div class="row">
+    
+    <div class="col-6 offset-3">
+        
+        <p>Upload Project File (.xlxs)</p>
+        <label for="">Select File</label>
+        <input type="file" id="ProjectUpload"  accept="application/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" />
+
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-6 offset-3">
+    
+        <table class="table table-striped">
+        
+            @if (!Model.HasProjects)
+            {
+                <caption>No projects uploaded</caption>
+            }
+            else
+            {
+
+                <thead>
+                <tr>
+                    <th>Project Name</th>
+                    <th>Client</th>
+                    <th><a href="#">Select All</a></th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var row in Model.ExistingProjects)
+                {
+                    <tr>
+                        <td>@row.Name</td>
+                        <td>@row.Client</td>
+                        <td><input type="checkbox" id="@row.DeleteId" data-delete-id="@row.Id" /></td>
+                    </tr>
+                }
+                </tbody>
+                <tfoot>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th><a href="#">Delete</a></th>
+                </tr>
+                </tfoot>
+            }
+
+        </table>
+        
+    </div>
+
+</div>
