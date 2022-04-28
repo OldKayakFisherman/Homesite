@@ -1,18 +1,23 @@
 ﻿@using System.Data
 @model ProjectUploadViewModel
 
+<form asp-controller="Manage" asp-action="Projects" method="post" enctype="multipart/form-data">
+
 <div class="row">
     
-    <div class="col-6 offset-3">
+    <div class="col-6 offset-3 mt-3">
         
-        <p>Upload Project File (.xlxs)</p>
-        <label for="">Select File</label>
-        <input type="file" id="ProjectUpload"  accept="application/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" />
-
+        <h3>Upload Project File (.xlxs)</h3>
+        <label for="ProjectUpload">Select File</label>
+        <input type="file" id="ProjectUpload" asp-for="ProjectUpload"  accept="application/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" />
     </div>
-
+    <div class="col-6 offset-3 mt-3">
+        <input class="btn btn-primary ms-lg-auto" type="submit"/>
+    </div>
 </div>
-<div class="row">
+
+
+<div class="row mt-3">
     <div class="col-6 offset-3">
     
         <table class="table table-striped">
@@ -55,3 +60,5 @@
     </div>
 
 </div>
+
+</form>
