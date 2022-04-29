@@ -45,6 +45,12 @@ namespace Homesite.Web.Controllers
                 if (ms != null)
                 {
                     IProjectParserResult parserResult =  _projectParserService.ParseProjects(ms);
+
+                    if (!parserResult.Success)
+                    {
+                        model.Errors = parserResult.Messages;
+                    }
+
                 }
             }
 
