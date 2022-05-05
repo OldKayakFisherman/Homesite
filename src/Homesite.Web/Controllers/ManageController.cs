@@ -1,6 +1,8 @@
-﻿using Homesite.Application.Common.Interfaces.Services.Process;
+﻿using Homesite.Application.Common.Interfaces.Services.Parameters.Process;
+using Homesite.Application.Common.Interfaces.Services.Process;
 using Homesite.Application.Common.Interfaces.Services.Responses.Process;
 using Homesite.Application.Common.Interfaces.Services.Web;
+using Homesite.Infrastructure.Services.Parameters.Process;
 using Homesite.Infrastructure.Services.Web;
 using Homesite.Web.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -12,15 +14,16 @@ namespace Homesite.Web.Controllers
     {
 
         private readonly IProjectParserService _projectParserService;
-        private readonly IUploadUtilityService _uploadUtilityService;
+        private readonly IProjectImportService _projectImportService;
 
         public ManageController(
             IProjectParserService projectParserService,
-            IUploadUtilityService uploadUtilityService
+            IProjectImportService projectImportService
         )
         {
             _projectParserService = projectParserService;
-            _uploadUtilityService = uploadUtilityService;
+            _projectImportService = projectImportService;
+           
         }
 
         [Authorize]
@@ -36,19 +39,43 @@ namespace Homesite.Web.Controllers
         }
 
         [HttpPost, Authorize]
-        public IActionResult Projects([FromForm] ProjectUploadViewModel model)
+        public async Task<IActionResult> Projects([FromForm] ProjectUploadViewModel model, CancellationToken cancellationToken)
         {
             if (model.HasFileUpload)
             {
-                MemoryStream? ms = _uploadUtilityService.ConvertPostedFileToMemoryStream(model.ProjectUpload);
+                MemoryStream ms = new MemoryStream();
+
+                model.ProjectUpload.CopyTo(ms);
 
                 if (ms != null)
                 {
+                    
                     IProjectParserResult parserResult =  _projectParserService.ParseProjects(ms);
 
                     if (!parserResult.Success)
                     {
-                        model.Errors = parserResult.Messages;
+                        model.Errors.Add("Upload Error");
+                        model.Errors.Add(parserResult.Error.Message);
+                    }
+                    else
+                    {
+                        IProjectImportParameters importParameters = new ProjectImportParameters();
+
+                        importParameters.ParsedRecords = parserResult.ParsedProjects;
+
+                        IProjectImportResult importResult =
+                            await _projectImportService.ImportProjects(importParameters, cancellationToken);
+
+                        if (!importResult.Success)
+                        {
+                            model.Errors.Add("Import Error");
+                            model.Errors.Add(importResult.Error.Message);
+                        }
+                        else
+                        {
+                            
+                        }
+
                     }
 
                 }

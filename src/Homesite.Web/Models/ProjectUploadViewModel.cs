@@ -18,7 +18,12 @@ namespace Homesite.Web.Models
         [DisplayName("Project Upload File")]
         public IFormFile? ProjectUpload { get; set; }
 
-        public bool HasFileUpload { get; set; }
+        public bool HasFileUpload {
+            get
+            {
+                return (ProjectUpload != null);
+            }
+        }
         public IList<string> Errors { get; set; } = new List<string>();
         public IList<ProjectViewModel>? ExistingProjects { get; set; } = new List<ProjectViewModel>();
         public IList<int>? ProjectsToRemove { get; set; }
