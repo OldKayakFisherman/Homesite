@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Homesite.Application.Common.Interfaces.Persistence.Responses;
+using Homesite.Application.Common.Interfaces.Services.Persistence.Responses;
 
 namespace Homesite.Infrastructure.Services.Responses.Persistence
 {

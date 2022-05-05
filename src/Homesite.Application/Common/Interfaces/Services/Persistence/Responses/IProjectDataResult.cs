@@ -1,6 +1,4 @@
-﻿using Homesite.Domain.Entities;
-
-namespace Homesite.Application.Common.Interfaces.Persistence.Responses;
+﻿namespace Homesite.Application.Common.Interfaces.Services.Persistence.Responses;
 
 public interface IProjectDataRecord
 {
@@ -23,4 +21,5 @@ public interface IProjectDataResult
 {
     public IList<IProjectDataRecord> Records { get; set; }
     public IProjectDataRecord? SingleResult { get; }
+
 }

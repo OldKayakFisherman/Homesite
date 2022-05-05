@@ -16,8 +16,4 @@
     <ProjectReference Include="..\Homesite.Domain\Homesite.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Common\Interfaces\Persistence\Responses\" />
-  </ItemGroup>
-
 </Project>
