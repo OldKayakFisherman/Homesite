@@ -351,3 +351,5 @@ MigrationBackup/
 
 # Local Databases
 *.db
+*.db-shm
+*.db-wal

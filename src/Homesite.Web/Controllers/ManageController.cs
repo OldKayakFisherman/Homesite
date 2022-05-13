@@ -1,4 +1,5 @@
 ﻿using Homesite.Application.Common.Interfaces.Services.Parameters.Process;
+using Homesite.Application.Common.Interfaces.Services.Persistence;
 using Homesite.Application.Common.Interfaces.Services.Process;
 using Homesite.Application.Common.Interfaces.Services.Responses.Process;
 using Homesite.Application.Common.Interfaces.Services.Web;
@@ -15,15 +16,18 @@ namespace Homesite.Web.Controllers
 
         private readonly IProjectParserService _projectParserService;
         private readonly IProjectImportService _projectImportService;
+        private readonly IProjectDataService _projectDataService;
 
         public ManageController(
             IProjectParserService projectParserService,
-            IProjectImportService projectImportService
+            IProjectImportService projectImportService,
+            IProjectDataService projectDataService
         )
         {
             _projectParserService = projectParserService;
             _projectImportService = projectImportService;
-           
+            _projectDataService = projectDataService;
+
         }
 
         [Authorize]
@@ -69,11 +73,15 @@ namespace Homesite.Web.Controllers
                         if (!importResult.Success)
                         {
                             model.Errors.Add("Import Error");
-                            model.Errors.Add(importResult.Error.Message);
+
+                            if (importResult.Error != null)
+                            {
+                                model.Errors.Add(importResult.Error.Message);
+                            }
                         }
                         else
                         {
-                            
+                            model.PopulateExistingProjects(_projectDataService.All(cancellationToken).Result.Records);
                         }
 
                     }

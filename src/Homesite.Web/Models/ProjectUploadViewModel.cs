@@ -2,6 +2,8 @@
 
 
 using System.ComponentModel;
+using Homesite.Application.Common.Interfaces.Services.Persistence.Responses;
+using OfficeOpenXml.FormulaParsing.Excel.Functions.Logical;
 
 namespace Homesite.Web.Models
 {
@@ -29,5 +31,22 @@ namespace Homesite.Web.Models
         public IList<int>? ProjectsToRemove { get; set; }
         public bool HasProjects => ExistingProjects is {Count: > 0};
         public bool HasErrors => Errors is { Count: > 0 };
+
+        public void PopulateExistingProjects(IList<IProjectDataRecord> records)
+        {
+            if(records != null && records.Count > 0)
+            {
+                foreach (var projectDataRecord in records)
+                {
+                    ExistingProjects.Add(new ProjectViewModel()
+                    {
+                        Name = projectDataRecord.Name, 
+                        Client = projectDataRecord .Client,
+                        Id = projectDataRecord.Id
+                    });   
+                }
+            }
+        }
+
     }
 }

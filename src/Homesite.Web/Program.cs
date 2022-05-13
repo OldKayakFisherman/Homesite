@@ -5,11 +5,13 @@ using AutoMapper;
 using Homesite.Application.Common.Interfaces.Persistence;
 using Homesite.Application.Common.Interfaces.Services.Logging;
 using Homesite.Application.Common.Interfaces.Services.Parameters.Logging;
+using Homesite.Application.Common.Interfaces.Services.Persistence;
 using Homesite.Application.Common.Interfaces.Services.Process;
 using Homesite.Application.Common.Interfaces.Services.Web;
 using Homesite.Infrastructure.Identity;
 using Homesite.Infrastructure.Middleware;
 using Homesite.Infrastructure.Services.Logging;
+using Homesite.Infrastructure.Services.Persistence;
 using Homesite.Infrastructure.Services.Process;
 using Homesite.Infrastructure.Services.Web;
 
@@ -41,7 +43,8 @@ builder.Services.AddTransient<IProjectParserService, ProjectParserService>();
 builder.Services.AddTransient<IProjectImportService, ProjectImportService>();
 builder.Services.AddTransient<ITrafficLoggerService, TrafficLoggerService>();
 builder.Services.AddTransient<IUploadUtilityService, UploadUtilityService>();
-    
+builder.Services.AddTransient<IProjectDataService, ProjectDataService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
