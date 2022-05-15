@@ -37,9 +37,13 @@ namespace Homesite.Web.Controllers
         }
 
         [Authorize]
-        public IActionResult Projects()
+        public async Task<IActionResult> Projects(CancellationToken cancellationToken)
         {
-            return View(new ProjectUploadViewModel());
+            ProjectUploadViewModel model = new ProjectUploadViewModel();
+
+            model.PopulateExistingProjects(_projectDataService.All(cancellationToken).Result.Records);
+
+            return View(model);
         }
 
         [HttpPost, Authorize]
