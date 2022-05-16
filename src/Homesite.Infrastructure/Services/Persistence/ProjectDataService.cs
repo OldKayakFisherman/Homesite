@@ -31,6 +31,24 @@ namespace Homesite.Infrastructure.Services.Persistence
             return result;
         }
 
+        public async Task DeleteProjects(IList<int> ids, CancellationToken token)
+        {
+            if (ids.Count > 0)
+            {
+                foreach (var id in ids)
+                {
+                    Project? evalProject = await _ctx.Projects.FindAsync(id);
+
+                    if (evalProject != null) 
+                    {
+                        _ctx.Projects.Remove(evalProject);
+                    }
+                }
+
+                await _ctx.SaveChangesAsync(token);
+            }
+        }
+
         private static IProjectDataRecord ParseDataRecord(Project project)
         {
             IProjectDataRecord record = new ProjectDataRecord()

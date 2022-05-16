@@ -96,6 +96,21 @@ namespace Homesite.Web.Controllers
             return View(model);
         }
 
+        [HttpPost][Authorize]
+        public async Task<IActionResult> DeleteProjects([FromBody] List<int> ids, CancellationToken cancellationToken)
+        {
+            if (ids.Count > 0)
+            {
+                await _projectDataService.DeleteProjects(ids, cancellationToken);
+                return new OkResult();
+            }
+            else
+            {
+                return new BadRequestResult();
+            }
+
+            
+        }
 
         [Authorize]
         public IActionResult Traffic()
