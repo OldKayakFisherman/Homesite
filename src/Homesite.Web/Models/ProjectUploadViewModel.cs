@@ -7,14 +7,7 @@ using OfficeOpenXml.FormulaParsing.Excel.Functions.Logical;
 
 namespace Homesite.Web.Models
 {
-    public class ProjectViewModel
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Client { get; set; }
-        public string DeleteId => $"chkDelete{this.Id}";
-    }
-
+    
     public class ProjectUploadViewModel
     {
         [DisplayName("Project Upload File")]
@@ -27,7 +20,7 @@ namespace Homesite.Web.Models
             }
         }
         public IList<string> Errors { get; set; } = new List<string>();
-        public IList<ProjectViewModel>? ExistingProjects { get; set; } = new List<ProjectViewModel>();
+        public IList<ProjectSimpleViewModel>? ExistingProjects { get; set; } = new List<ProjectSimpleViewModel>();
         public bool HasProjects => ExistingProjects is {Count: > 0};
         public bool HasErrors => Errors is { Count: > 0 };
 
@@ -37,7 +30,7 @@ namespace Homesite.Web.Models
             {
                 foreach (var projectDataRecord in records)
                 {
-                    ExistingProjects.Add(new ProjectViewModel()
+                    ExistingProjects.Add(new ProjectSimpleViewModel()
                     {
                         Name = projectDataRecord.Name, 
                         Client = projectDataRecord .Client,
