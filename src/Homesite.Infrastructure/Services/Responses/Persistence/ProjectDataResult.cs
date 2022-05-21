@@ -23,6 +23,30 @@ namespace Homesite.Infrastructure.Services.Responses.Persistence
         public IList<string>? Databases { get; set; } = new List<string>();
         public IList<string>? Toolkits { get; set; } = new List<string>();
         public IList<string>? Methodologies { get; set; } = new List<string>();
+
+
+        public string FormattedStartAndEndYear
+        {
+            get
+            {
+                string retval = $"{StartYear} - Present";
+
+                if (EndYear.HasValue)
+                {
+                    if (StartYear != EndYear)
+                    {
+                        retval = $"{StartYear} - {EndYear}";
+                    }
+                    else
+                    {
+                        retval = $"{StartYear}";
+                    }
+                }
+
+                return retval;
+            }
+        }
+
     }
 
     public class ProjectDataResult: IProjectDataResult

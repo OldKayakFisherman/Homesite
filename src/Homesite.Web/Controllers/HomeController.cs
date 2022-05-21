@@ -1,16 +1,20 @@
 ﻿using Homesite.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using Homesite.Application.Common.Interfaces.Services.Persistence;
+using Homesite.Application.Common.Interfaces.Services.Persistence.Responses;
 
 namespace Homesite.Web.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IProjectDataService _projectDataService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IProjectDataService projectDataService)
         {
             _logger = logger;
+            _projectDataService= projectDataService;
         }
 
         public IActionResult Index()
@@ -33,9 +37,18 @@ namespace Homesite.Web.Controllers
             return View();
         }
 
-        public IActionResult Projects()
+        public async Task<IActionResult> Projects(CancellationToken token)
         {
-            return View();
+            ProjectDisplayViewModel model = new ProjectDisplayViewModel();
+            IProjectDataResult dataResult = await _projectDataService.All(token);
+
+            if (dataResult.Records.Count > 0)
+            {
+                model.Projects = dataResult.Records;
+            }
+            
+
+            return View(model);
         }
 
         public IActionResult Contact()

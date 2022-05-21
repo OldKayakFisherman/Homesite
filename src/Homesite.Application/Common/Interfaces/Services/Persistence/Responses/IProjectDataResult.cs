@@ -15,6 +15,7 @@ public interface IProjectDataRecord
     IList<string>? Databases { get; set; }
     IList<string>? Toolkits { get; set; }
     IList<string>? Methodologies { get; set; }
+    string FormattedStartAndEndYear { get; }
 }
 
 public interface IProjectDataResult
