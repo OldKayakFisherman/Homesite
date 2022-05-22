@@ -26,7 +26,16 @@ namespace Homesite.Infrastructure.Services.Persistence
         {
             IProjectDataResult result = new ProjectDataResult();
 
-            result.Records = await _ctx.Projects.Select(x => ParseDataRecord(x)).ToListAsync(token);
+            result.Records = await _ctx.Projects
+                .Include("Client")
+                .Include("Roles")
+                .Include("Languages")
+                .Include("Databases")
+                .Include("Toolkits")
+                .Include("Methodologies")
+                .Select(x => ParseDataRecord(x))
+               
+                .ToListAsync(token);
 
             return result;
         }

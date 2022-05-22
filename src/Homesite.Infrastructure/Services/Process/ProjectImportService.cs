@@ -43,27 +43,92 @@ namespace Homesite.Infrastructure.Services.Process
 
                     foreach (var recordRole in record.Roles)
                     {
-                        project.Roles.Add(new ProjectRole() {Name = recordRole});
+
+                        ProjectRole? evalRecord =
+                            _ctx.ProjectRoles.FirstOrDefault(x =>
+                                x.Name.ToUpper() == recordRole.ToUpper());
+
+                        if (evalRecord != null)
+                        {
+                            project.Roles.Add(evalRecord);
+                        }
+                        else
+                        {
+                            project.Roles.Add(new ProjectRole() { Name = recordRole });
+                        }
+                       
                     }
 
                     foreach (var recordLanguage in record.Languages)
                     {
-                        project.Languages.Add(new Language() {Name = recordLanguage});
+
+                        Language? evalRecord =
+                            _ctx.Languages.FirstOrDefault(x => x.Name.ToUpper() == recordLanguage.ToUpper());
+
+                        if (evalRecord != null)
+                        {
+                            project.Languages.Add(evalRecord);
+                        }
+                        else
+                        {
+                            project.Languages.Add(new Language() { Name = recordLanguage });
+                        }
+
+
+                        
                     }
 
                     foreach (var recordDatabase in record.Databases)
                     {
-                        project.Databases.Add(new Database() {Name = recordDatabase});
+
+                        Database? evalRecord =
+                            _ctx.Databases.FirstOrDefault(x =>
+                                x.Name.ToUpper() ==recordDatabase.ToUpper());
+
+                        if (evalRecord != null)
+                        {
+                            project.Databases.Add(evalRecord);
+                        }
+                        else
+                        {
+                            project.Databases.Add(new Database() { Name = recordDatabase });
+                        }
+
                     }
 
                     foreach (var recordToolkit in record.Toolkits)
                     {
-                        project.Toolkits.Add(new Toolkit() {Name = recordToolkit});
+
+                        Toolkit? evalRecord =
+                            _ctx.Toolkits.FirstOrDefault(x =>
+                               x.Name.ToUpper()== recordToolkit);
+
+                        if (evalRecord != null)
+                        {
+                            project.Toolkits.Add(evalRecord);
+                        }
+                        else
+                        {
+                            project.Toolkits.Add(new Toolkit() { Name = recordToolkit });
+                        }
+
                     }
 
                     foreach (var recordMethodology in record.Methodologies)
                     {
-                        project.Methodologies.Add(new Methodology() {Name = recordMethodology});
+                        Methodology? evalRecord =
+                            _ctx.Methodologies.FirstOrDefault(x =>
+                               x.Name.ToUpper() == recordMethodology.ToUpper());
+
+                        if (evalRecord != null)
+                        {
+                            project.Methodologies.Add(evalRecord);
+                        }
+                        else
+                        {
+                            project.Methodologies.Add(new Methodology() { Name = recordMethodology });
+                        }
+
                     }
 
 
