@@ -6,12 +6,13 @@
         
         @foreach (var project in Model.Projects)
         {
-            <div id="project-1" class="projectContent">
-                <fieldset>
-                    <legend>@project.Name</legend>
-                </fieldset>
+            <div id="project-1" class="projectContent card">
+                
+                <div class="card-body">
 
-
+                
+                    <h4 class="card-title">@project.Name</h4>
+                
 
                 <div class="form-group">
                     <label class="col-sm-2 control-label"><b>Client:</b></label>
@@ -74,6 +75,8 @@
                     <div class="col-sm-10">
                         <p class="form-control-static">Agile-Scrum</p>
                     </div>
+                </div>
+
                 </div>
 
             </div>
