@@ -33,8 +33,8 @@ namespace Homesite.Infrastructure.Services.Persistence
                 .Include("Databases")
                 .Include("Toolkits")
                 .Include("Methodologies")
+                .OrderBy(x => x.StartYear)
                 .Select(x => ParseDataRecord(x))
-               
                 .ToListAsync(token);
 
             return result;

@@ -1,18 +1,26 @@
 ﻿@model ProjectDisplayViewModel
 
 <div class="row">
-    <div class="col-12">
-        
-        
+    <div class="offset-4 col-4">
+        @{
+            int index = 0;
+        };
+
         @foreach (var project in Model.Projects)
         {
-            <div id="project-1" class="projectContent card">
-                
-                <div class="card-body">
+
+           
+            index++;
+            
+
+            <div id="project-@index" class="card mt-3">
+
+                <div class="card-header">
+                     <h4 class="card-title">@project.Name</h4>
+                </div>
 
                 
-                    <h4 class="card-title">@project.Name</h4>
-                
+                <div class="card-body">
 
                 <div class="form-group">
                     <label class="col-sm-2 control-label"><b>Client:</b></label>
