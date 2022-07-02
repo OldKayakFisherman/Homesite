@@ -1,5 +1,7 @@
-﻿using Homesite.Application.Common.Interfaces.Services.Persistence;
+﻿using Homesite.Application.Common.Interfaces.Persistence;
+using Homesite.Application.Common.Interfaces.Services.Persistence;
 using Homesite.Application.Common.Interfaces.Services.Persistence.Responses;
+using Homesite.Infrastructure.Services.Responses.Persistence;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,17 +12,28 @@ namespace Homesite.Infrastructure.Services.Persistence
 {
     public class TrafficLogDataService : ITrafficLogDataService
     {
-        public ITrafficLogDataResult GetCurrentTrafficLogs()
+        private readonly IApplicationDbContext _context;
+
+        public TrafficLogDataService(IApplicationDbContext ctx)
+        {
+            _context = ctx;
+        }
+
+        public async Task<ITrafficLogDataResult> GetCurrentTrafficLogs()
+        {
+            ITrafficLogDataResult dataResult = new TrafficLogDataResult();
+
+            //dataResult = 
+
+            return dataResult;
+        }
+
+        public Task<ITrafficLogDataResult> GetTrafficLogsByDate(DateTime startDate, DateTime endDate)
         {
             throw new NotImplementedException();
         }
 
-        public ITrafficLogDataResult GetTrafficLogsByDate(DateTime startDate, DateTime endDate)
-        {
-            throw new NotImplementedException();
-        }
-
-        public ITrafficLogDataResult GetTrafficLogsByIP(string ip)
+        public Task<ITrafficLogDataResult> GetTrafficLogsByIP(string ip)
         {
             throw new NotImplementedException();
         }

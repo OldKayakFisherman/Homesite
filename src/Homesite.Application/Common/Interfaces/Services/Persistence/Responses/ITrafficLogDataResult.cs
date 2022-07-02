@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Homesite.Application.Common.Interfaces.Services.Persistence.Responses
 {
 
-    public interface ITrafficDataRecord
+    public interface ITrafficLogDataRecord
     {
         int Id { get; set; }
 
@@ -46,7 +46,7 @@ namespace Homesite.Application.Common.Interfaces.Services.Persistence.Responses
 
     public interface ITrafficLogDataResult
     {
-        public IList<ITrafficDataRecord> Records { get; set; }
-        public ITrafficDataRecord? SingleResult { get; }
+        public IList<ITrafficLogDataRecord> Records { get; set; }
+        public ITrafficLogDataRecord? SingleResult { get; }
     }
 }

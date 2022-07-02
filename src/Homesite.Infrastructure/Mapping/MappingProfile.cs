@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using Homesite.Application.Common.Interfaces.Services.Parameters.Logging;
-using Homesite.Application.Common.Interfaces.Services.Responses.Process;
+using Homesite.Application.Common.Interfaces.Services.Persistence.Responses;
 using Homesite.Domain.Entities;
-using Homesite.Infrastructure.Services.Parameters.Logging;
-using Homesite.Infrastructure.Services.Responses.Process;
+
 
 namespace Homesite.Infrastructure.Mapping
 {
@@ -17,6 +11,7 @@ namespace Homesite.Infrastructure.Mapping
         public MappingProfile()
         {
             CreateMap<ITrafficLogParameter, TrafficLog>();
+            CreateMap<ITrafficLogDataRecord, TrafficLog>();
         }
     }
 }

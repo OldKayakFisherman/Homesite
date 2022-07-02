@@ -9,8 +9,8 @@ namespace Homesite.Application.Common.Interfaces.Services.Persistence
 {
     public interface ITrafficLogDataService
     {
-        ITrafficLogDataResult GetCurrentTrafficLogs();
-        ITrafficLogDataResult GetTrafficLogsByIP(string ip);
-        ITrafficLogDataResult GetTrafficLogsByDate(DateTime startDate, DateTime endDate);
+        Task<ITrafficLogDataResult> GetCurrentTrafficLogs();
+        Task<ITrafficLogDataResult> GetTrafficLogsByIP(string ip);
+        Task<ITrafficLogDataResult> GetTrafficLogsByDate(DateTime startDate, DateTime endDate);
     }
 }
