@@ -2,8 +2,6 @@
 
 
 using System.ComponentModel;
-using Homesite.Application.Common.Interfaces.Services.Persistence.Responses;
-using OfficeOpenXml.FormulaParsing.Excel.Functions.Logical;
 
 namespace Homesite.Web.Models
 {
