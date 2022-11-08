@@ -1,6 +1,7 @@
 ﻿
 
 
+using Homesite.Application.Common.Interfaces.Services.Persistence.Responses;
 using System.ComponentModel;
 
 namespace Homesite.Web.Models

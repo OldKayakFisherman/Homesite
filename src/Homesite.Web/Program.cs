@@ -20,17 +20,28 @@ var builder = WebApplication.CreateBuilder(args);
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
+
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlite(connectionString));;
+    options.UseSqlite(connectionString)); ;
+
 
 builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = false)
-    .AddEntityFrameworkStores<ApplicationDbContext>();;
+    .AddEntityFrameworkStores<ApplicationDbContext>(); ;
+
+
+builder.Services.AddDbContext<IApplicationDbContext, ApplicationDbContext>(options =>
+    options.UseSqlite(connectionString)
+ );
+
 
 // Add services to the container.
 
-builder.Services.AddDbContext<IApplicationDbContext,ApplicationDbContext>(options =>
+/*
+builder.Services.AddDbContext<IApplicationDbContext, ApplicationDbContext>(options =>
     options.UseSqlite(connectionString)
 );
+*/
+
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 

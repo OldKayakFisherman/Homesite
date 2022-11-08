@@ -1,0 +1,2 @@
+﻿- Add a migration
+ef migrations add "InitialMigration" --project $infrastructurePath --startup-project $webPath --output-dir $migrationsPath
