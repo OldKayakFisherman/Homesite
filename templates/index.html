@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rick Flagg</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/site.css') }}">
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="#">Rick Flagg</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a id="navHome" class="nav-link active" href="#">Home</a>
+                <a id="navAbout" class="nav-link" nav-name="about" href="#">About Me</a>
+                <a id="navSkills" class="nav-link" nav-name="skills" href="#">Skills</a>
+                <a id="navClients" class="nav-link" nav-name="clients" href="#">Clients</a>
+                <a id="navContact" class="nav-link" nav-name="contact" href="#">Contact Me</a>
+            </div>
+        </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid" >
+        <main>
+            <section id="home" class="mb-5">
+                {% include "landing.html" %}
+            </section>
+            <section id="about" class="mt-5">
+                {% include "about.html" %}
+            </section>
+            <section id="skills">
+                {% include "skills.html" %}
+            </section>
+            <section id="clients">
+                {% include "clients.html" %}
+            </section>
+            <section id="contact">
+                {% include "contact.html" %}
+            </section>
+        </main>
+    </div>
+
+    <footer class="footer mt-auto bg-black fixed-bottom">
+        <div class="container clearfix">
+            <span class="text-muted float-end">Copyright {{ copyright_year }} | All Rights Reserved</span>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='js/IndexController.js') }}"></script>
+
+</body>
+</html>
