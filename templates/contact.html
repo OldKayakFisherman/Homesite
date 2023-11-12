@@ -1,18 +1,33 @@
 
-<div class="row">
+<div class="row mt-5">
+    <div class="col-12 mt-5">
+        <h5>Want to connect? Please add your email and a brief message, and I'll reach out as soon as I can.</h5>
+    </div>
+</div>
+
+<div class="row mt-3">
     <div class="col-12">
-        <form method="post" target="_self" action="/contact">
+
+        <form id="frmContact" method="post" action="/contact">
         <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            <label for="txtContactEmail" class="form-label">Email address:</label>
+            <input name="txtContactEmail" required type="email" class="form-control" id="txtContactEmail" placeholder="name@example.com">
         </div>
         <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <label for="txtReason" class="form-label">Reason:</label>
+            <textarea name="txtReason" required class="form-control" id="txtReason" rows="3" ></textarea>
         </div>
-            <div>
-                <input type="submit" class="btn btn-primary" value="Contact me">
-            </div>
+
+        <div>
+            <input type="checkbox" hidden="hidden" name="chkNonce" id="chkNonce">
+        </div>
+        <div>
+             <input id="btnSubmitContact" type="submit" class="btn btn-primary" value="Contact me">
+        </div>
+
         </form>
     </div>
 </div>
+
+
+
