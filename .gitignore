@@ -207,4 +207,4 @@ cython_debug/
 
 # CMake
 cmake-build-*/
-
+db.json
